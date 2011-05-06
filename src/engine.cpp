@@ -60,11 +60,5 @@ uint8_t Engine::checkForVictory( uint8_t x
 	}
 
 	// Now check diagonally:
-	if (cube[x][y][z] != cube[1][1][1]) {
-		return 0;
-	} else if (cube[x][y][z] == cube[2-x][2-y][2-z]) {
-		return cube[x][y][z];
-	} else {
-		return 0;
-	}
+	return cube[x][y][z] & cube[1][1][1] & cube[2-x][2-y][2-z];
 }
